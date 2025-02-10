@@ -17,6 +17,15 @@ class SinglyLinkedList:
             curr = curr.next
         print(' -> '.join(linkedlist))
 
+# Search Value
+
+    def search(self, head, val):
+        curr = head
+        while curr:
+            if val == curr.val:
+                return True
+            curr = curr.next
+        return False
 
 
 
@@ -41,16 +50,5 @@ while curr:
     curr = curr.next
 
 
-
-# Search Node 
-    def search(head, val):
-        curr = head
-        while curr:
-            if val == curr.val:
-                print(curr.next)
-                print(curr)
-                print(curr.val)
-            curr = curr.next
-        return False
 # A.display(head=Head)
-search(Head, 2)
+Head.search(Head, 2)
