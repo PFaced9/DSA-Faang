@@ -9,6 +9,14 @@ class DoublyLinkedList():
 
 
 head = tail = DoublyLinkedList(0)
+A = DoublyLinkedList(1)
+B = DoublyLinkedList(2)
+C = DoublyLinkedList(3)
+
+head.next = A
+A.next = B
+B.next = C
+
 print(head, tail)
 
 # Displaying The Doubly Linked List.
@@ -25,8 +33,10 @@ display(head=head)
 # Inserting At The Start.
 def insertAtStart(head, tail, val):
     new_node = DoublyLinkedList(val, next = head)
-    head.tail = new_node
+    head.prev = new_node
     return new_node, tail
 
-head, tail = insertAtStart(head, tail, 2)
+head, tail = insertAtStart(head, tail, -1)
 display(head)
+
+# Inserting At The End.
